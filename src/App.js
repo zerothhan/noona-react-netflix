@@ -1,5 +1,9 @@
 import logo from "./logo.svg";
 import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import MovieDetail from "./pages/MovieDetail";
+import Home from "./pages/Home";
+import Movies from "./pages/Movies";
 
 // 1. 3개 페이지 필요. 홈페이지, movie 페이지, movie detail 페이지
 // 2. 홈페이지에서 배너를 볼 수 있다.
@@ -15,7 +19,15 @@ import "./App.css";
 // 12. 영화를 필터링 할 수 있다.
 
 function App() {
-  return <div></div>;
+  return (
+    <div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/movies" element={<Movies />} />
+        <Route path="/movies/:id" element={<MovieDetail />} />
+      </Routes>
+    </div>
+  );
 }
 
 export default App;
